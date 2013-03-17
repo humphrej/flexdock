@@ -1,8 +1,9 @@
-FLEXDOCK_VERSION=1.2.3-SNAPHOT
+FLEXDOCK_VERSION=1.2.3
 
-mkdir -p maven/flexdock/src/main/java maven/flexdock/src/test/java
-mkdir -p maven/flexdock-demo/src/main/java maven/flexdock-demo/src/test/java
+mkdir -p maven/flexdock/src/main/java maven/flexdock/src/test/java maven/flexdock/src/main/resources
+mkdir -p maven/flexdock-demo/src/main/java maven/flexdock-demo/src/test/java maven/flexdock-demo/src/main/resources
 
+#Code copy
 cp -R src/java/core/* maven/flexdock/src/main/java
 cp -R src/java/dockbar/* maven/flexdock/src/main/java
 cp -R src/java/drag/* maven/flexdock/src/main/java
@@ -12,6 +13,10 @@ cp -R src/java/view/* maven/flexdock/src/main/java
 
 cp -R src/java/demo/* maven/flexdock-demo/src/main/java
 cp -R src/java/test/* maven/flexdock-demo/src/test/java
+#Resource copy
+cp -R resources/core/* maven/flexdock/src/main/resources
+cp -R resources/plaf/* maven/flexdock/src/main/resources
+cp -R resources/demo/* maven/flexdock-demo/src/main/resources
 
 cat > maven/flexdock/pom.xml <<_eof
 <?xml version="1.0"?>
